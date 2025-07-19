@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "author": "Jaime Mora G.",
+  "version": "1.0",
+  "name": "Snap Links ++ Chrome",
+  "description": "Seleccioná enlaces con el mouse, abrilos en pestañas nuevas y marcá checkboxes.",
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Snap Links ++ Chrome",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  }
+}
